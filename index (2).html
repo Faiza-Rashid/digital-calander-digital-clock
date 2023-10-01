@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock with Date</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #clock {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="clock"></div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const clockElement = document.getElementById("clock");
+            const timeString = now.toLocaleTimeString();
+            const dateString = now.toLocaleDateString();
+
+            clockElement.innerHTML = `Time: ${timeString} <br> Date: ${dateString}`;
+        }
+
+        // Update the clock every second
+        setInterval(updateClock, 1000);
+
+        // Initial update
+        updateClock();
+    </script>
+</body>
+</html>
